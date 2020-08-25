@@ -103,38 +103,66 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  padding: 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0em 2em;
   font-size: 1em;
-  height: 100%;
-  color: #009999;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper {
+.flex-container {
   /*add display:flex and set justify-content to space-between*/
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-flow: row wrap;
+  max-width: 1200px;
 }
 
-.div-1, .div-2, .div-3 {
+header, footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+header h1 {
+  font-family: 'Lora', serif;
+  font-size: 3.8em;
+  font-weight: 600;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid white;
+}
+
+main p {
+  font-size: 1.7em;
+}
+
+main span {
+  font-family: 'Lora', serif;
+}
+
+.flex-items {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   display: flex;
-  width: 30%;
   justify-content: center;
   align-items: center;
-  color: #fff;
   line-height: 1.5em;
-  font-size: 1.6em;
-  height: auto;
+  font-size: 1.3em;
+  border-bottom: 1px solid white;
 }
 
-.div-1, .div-2 {
-  border-right: 1px solid white;
+footer {
+  border-top: 1px solid white;
 }
 
-
+footer i {
+  padding: 30px 20px 0 0;
+}
 
 /* ==========================================================================
    Helper classes
@@ -215,6 +243,24 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media all and (max-width: 768px) {
+  body {
+    padding; 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-items {
+    flex-basis: 30%;
+    border-bottom: none;
+  }
+
+  #div-2 p {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0 40px;
+  }
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
